@@ -7,7 +7,7 @@ function Header({ clientsList }) {
   const totalSum = () => {
     return clientsList.reduce((acc, li) => acc + li.sum, 0);
   };
-  console.log(totalSum);
+
   return (
     <div className={styles["header-container"]}>
       <p className={styles["header-p"]}>

@@ -15,7 +15,13 @@ export const read = (key) => {
 
 export const create = (key, data) => {
   const allData = read(key);
-    data.id = uuidv4();
-    allData.push(data)
-    write(key, allData)
+  data.id = uuidv4();
+  allData.push(data);
+  write(key, allData);
+};
+
+export const destroy = (key, id) => {
+  const allData = read(key);
+  const filtered = allData.filter((li) => li.id !== id);
+  write(key, filtered);
 };

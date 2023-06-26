@@ -2,7 +2,7 @@ import Button from "./Button";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../css/BankList.module.css";
 
-function BankList({ clientsList }) {
+function BankList({ clientsList, setDeleteList }) {
   if (clientsList === null) {
     return "Loading...";
   }
@@ -18,7 +18,7 @@ function BankList({ clientsList }) {
             <div style={{ width: "100px", textAlign: "center" }}>
               {li.sum} &euro;
             </div>
-            <Button text="Delete"></Button>
+            <Button text="Delete" action={() => setDeleteList(li)}></Button>
           </div>
           <div>
             <Button text="Add"></Button>
