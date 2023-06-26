@@ -24,14 +24,11 @@ function App() {
     setLastUpdate(Date.now());
   }, [personDetails]);
 
-  console.log(personDetails);
-  console.log(clientsList);
   return (
     <div className="app-container">
       <div className="content">
-        <Header />
+        <Header clientsList={clientsList} />
         <BankForm setPersonDetails={setPersonDetails} />
-
         <BankList clientsList={clientsList} />
       </div>
     </div>

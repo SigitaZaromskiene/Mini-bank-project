@@ -22,7 +22,7 @@ function BankList({ clientsList }) {
           </div>
           <div>
             <Button text="Add"></Button>
-            <input />
+            <input type="number" />
             <Button text="Withdraw"></Button>
           </div>
         </li>
