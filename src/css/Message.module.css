@@ -1,0 +1,17 @@
+.message {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(128, 128, 128, 0.747);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  color: red;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}

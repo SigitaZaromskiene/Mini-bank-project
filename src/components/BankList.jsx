@@ -4,7 +4,13 @@ import styles from "../css/BankList.module.css";
 
 import AddWithdrawMoney from "./AddWithdrawMoney";
 
-function BankList({ clientsList, setDeleteList, setClientsList, setEditData }) {
+function BankList({
+  clientsList,
+  setDeleteList,
+  setClientsList,
+  setEditData,
+  setMessage,
+}) {
   if (clientsList === null) {
     return "Loading...";
   }
@@ -30,6 +36,7 @@ function BankList({ clientsList, setDeleteList, setClientsList, setEditData }) {
             li={li}
             setClientsList={setClientsList}
             setEditData={setEditData}
+            setMessage={setMessage}
           />
         </li>
       ))}
