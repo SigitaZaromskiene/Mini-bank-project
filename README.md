@@ -1,3 +1,17 @@
+## 🌟 About
+
+This project is for educational porpuses only. 
+
+
+## 🎯 Project features/goals
+
+-   Learning CRUD and using localStorage
+-   Learning conditional rendering
+-   Using controlled forms
+-   Mini form validations and error messages
+-   Working with filters
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +82,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
