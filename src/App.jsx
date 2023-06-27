@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import BankForm from "./components/BankForm";
 import { useState, useEffect } from "react";
-import { read, create, destroy } from "./components/localStorage";
+import { read, create, destroy, edit } from "./components/localStorage";
 import BankList from "./components/BankList";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
   const [clientsList, setClientsList] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [deleteList, setDeleteList] = useState(null);
+  const [editData, setEditData] = useState(null);
 
   const KEY = "LSSAVE";
 
@@ -33,6 +34,14 @@ function App() {
     setLastUpdate(Date.now());
   }, [deleteList]);
 
+  useEffect(() => {
+    if (editData === null) {
+      return;
+    }
+    edit(KEY, editData, editData.id);
+    setLastUpdate(Date.now());
+  }, [editData]);
+
   return (
     <div className="app-container">
       <div className="content">
@@ -42,6 +51,7 @@ function App() {
           clientsList={clientsList}
           setDeleteList={setDeleteList}
           setClientsList={setClientsList}
+          setEditData={setEditData}
         />
       </div>
     </div>
