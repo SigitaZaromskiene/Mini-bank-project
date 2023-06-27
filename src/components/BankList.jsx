@@ -1,7 +1,6 @@
 import Button from "./Button";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../css/BankList.module.css";
-
 import AddWithdrawMoney from "./AddWithdrawMoney";
 
 function BankList({
@@ -10,18 +9,27 @@ function BankList({
   setClientsList,
   setEditData,
   setMessage,
+  filtered,
 }) {
   if (clientsList === null) {
     return "Loading...";
   }
 
-  const sortedBySurname = clientsList.sort((a, b) =>
-    a.surname.localeCompare(b.surname)
-  );
+  let filteredList = clientsList;
+
+  if (filtered === "1") {
+    filteredList = clientsList.filter((li) => li);
+  }
+  if (filtered === "2") {
+    filteredList = clientsList.filter((li) => li.sum > 0);
+  }
+  if (filtered === "3") {
+    filteredList = clientsList.filter((li) => li.sum <= 0);
+  }
 
   return (
     <div className={styles["list-container"]}>
-      {sortedBySurname.map((li) => (
+      {filteredList.map((li) => (
         <li className={styles.list} key={uuidv4()}>
           <div className={styles["first-column"]}>
             <div style={{ display: "flex", gap: "10px", width: "200px" }}>

@@ -14,8 +14,7 @@ function App() {
   const [deleteList, setDeleteList] = useState(null);
   const [editData, setEditData] = useState(null);
   const [message, setMessage] = useState(null);
-
-  console.log(deleteList);
+  const [filtered, setFiltered] = useState([]);
 
   const KEY = "LSSAVE";
 
@@ -60,13 +59,14 @@ function App() {
       <div className="content">
         <Header clientsList={clientsList} />
         <BankForm setPersonDetails={setPersonDetails} />
-        <Filter />
+        <Filter setFiltered={setFiltered} filtered={filtered} />
         <BankList
           clientsList={clientsList}
           setDeleteList={setDeleteList}
           setClientsList={setClientsList}
           setEditData={setEditData}
           setMessage={setMessage}
+          filtered={filtered}
         />
         {message ? <Message message={message}></Message> : null}
       </div>
