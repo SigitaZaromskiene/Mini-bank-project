@@ -38,7 +38,11 @@ function App() {
       <div className="content">
         <Header clientsList={clientsList} />
         <BankForm setPersonDetails={setPersonDetails} />
-        <BankList clientsList={clientsList} setDeleteList={setDeleteList} />
+        <BankList
+          clientsList={clientsList}
+          setDeleteList={setDeleteList}
+          setClientsList={setClientsList}
+        />
       </div>
     </div>
   );
